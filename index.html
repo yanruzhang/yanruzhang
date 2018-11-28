@@ -12,31 +12,32 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <div class='navBar'>
+    <div class='navBar' id='navBar'>
         <div class='logo'>
             <img src="img/logo.png" alt="" class='logoImg'>
         </div>
         <ul class='navBarItems'>
-            <li class='navBarItem home'>HOME</li>
-            <li class='navBarItem about'>ABOUT</li>
-            <li class='navBarItem portfolio'>PORTFOLIO</li>
-            <li class='navBarItem contact'>CONTACT</li>
+            <li class='navBarItem' id='navBarItemHome'>HOME</li>
+            <li class='navBarItem' id='navBarItemAbout'>ABOUT</li>
+            <li class='navBarItem' id='navBarItemProject'>PROJECT</li>
+            <li class='navBarItem contact' id='navBarItemContact'>CONTACT</li>
         </ul>
     </div>
     <!-- Cover -->
     <div class='cover'>
+        <div class='coverImg'>
+            <img src="img/myself.png" alt="" class='img'>
+        </div>
         <div class='coverDisc'>
             <div class='coverDiscName'>
                 L<i class='coverDiscNameA'>A</i>URA ZH<i class='coverDiscNameB'>A</i>NG<br/>
                 <i class='coverDiscPosition'>A Front-end Developer</i>
             </div>
         </div>
-        <div class='coverImg'>
-            <img src="img/myself.png" alt="" class='img'>
-        </div>
+        
     </div>
     <!-- About -->
-    <div class='aboutWrapper'>
+    <div class='aboutWrapper' id='aboutMe'>
         <div class='aboutMeCircle'>
             <i class='placeholder'></i>
             ABOUT<br/> ME
@@ -63,7 +64,7 @@
         </div>
     </div>
     <!-- Project -->
-    <div class='projectWrapper'>
+    <div class='projectWrapper' id='project'>
         <div class='projectTitle'>
             M Y &nbsp;&nbsp;&nbsp;&nbsp;P R O J E C T
             <i class='iconfont'>&#xe722;</i>
@@ -72,7 +73,7 @@
         <div class='projectRocca'>
             <div class='projectRoccaImgContainer' id='projectRoccaImgContainer'>
                 <img src="img/Rocca.png" alt="" class='projectRoccaImg' id='projectRoccaImgSwitch'>
-                <div class='projectAddBackground iconfont' id='projectAddBackground'>&#xe64e;</div>
+                <div class='projectAddBackground iconfont' id='projectAddRoccaBackground'>&#xe64e;</div>
             </div>
             <div class='projectRoccaDisc'>
                 <div class='projectRoccaTitle'>Rocca Kitchen and Bar</div>
@@ -123,12 +124,12 @@
             </div>
             <div class='projectSimpleBookImgContainer' id='projectSimpleBookImgContainer'>
                 <img src="img/SimpleBook.png" alt="" class='projectSimpleBookImg' id='projectSimpleBookImgSwitch'>
-                <div class='projectAddBackground iconfont' id='projectAddBackground'>&#xe64e;</div>
+                <div class='projectAddBackground iconfont' id='projectAddSimpleBookBackground'>&#xe64e;</div>
             </div>
         </div>
     </div>
     <!-- Contact -->
-    <div class='contactWrapper'>
+    <div class='contactWrapper' id='contact'>
         <div class='contactInfoContainer'>
             <div onclick="window.open('https://www.linkedin.com/in/yanru-zhang/')" class='contactLink linkedIn'>
                 <i class='iconfont'>&#xe663;</i>

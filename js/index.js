@@ -1,29 +1,64 @@
 //Click to switch gif
+//Rocca
 let projectRoccaImgSwitch = document.getElementById('projectRoccaImgSwitch');
 let projectRoccaImgContainer = document.getElementById('projectRoccaImgContainer');
-let projectAddBackground = document.getElementById('projectAddBackground');
+let projectAddRoccaBackground = document.getElementById('projectAddRoccaBackground');
 
-projectRoccaImgContainer.onclick = function(){clickToSwitch(projectRoccaImgSwitch)};
+projectRoccaImgContainer.onclick = function(){clickToSwitch(projectRoccaImgSwitch, projectAddRoccaBackground)};
 
-function clickToSwitch(ele) {
-    let format = ele.src.slice(-3);
+//Simple Book
+let projectSimpleBookImgSwitch = document.getElementById('projectSimpleBookImgSwitch');
+let projectSimpleBookImgContainer = document.getElementById('projectSimpleBookImgContainer');
+let projectAddSimpleBookBackground = document.getElementById('projectAddSimpleBookBackground');
+
+projectSimpleBookImgContainer.onclick = function(){clickToSwitch(projectSimpleBookImgSwitch, projectAddSimpleBookBackground)};
+
+function clickToSwitch(ele1, ele2) {
+    let format = ele1.src.slice(-3);
     if (format == 'png') {
-        ele.src = ele.src.replace('png', 'gif');
-        projectAddBackground.innerHTML = '&#xe63b;';
+        ele1.src = ele1.src.replace('png', 'gif');
+        ele2.innerHTML = '&#xe63b;';
     }else {
-        ele.src = ele.src.replace('gif', 'png');
-        projectAddBackground.innerHTML = '&#xe64e;';
+        ele1.src = ele1.src.replace('gif', 'png');
+        ele2.innerHTML = '&#xe64e;';
     }
 }
 
-//Onmouseover to add background
+//Click to scroll
+//Home
+let navBarItemHome = document.getElementById('navBarItemHome');
+let navBarItemAbout = document.getElementById('navBarItemAbout');
+let navBarItemProject = document.getElementById('navBarItemProject');
+let navBarItemContact = document.getElementById('navBarItemContact');
+let navBar = document.getElementById('navBar');
+let aboutMe = document.getElementById('aboutMe');
+let project = document.getElementById('project');
+let contact = document.getElementById('contact');
 
-// projectRoccaImgContainer.onmouseover = function () {mouseOver(projectRoccaImgContainer)};
-// projectRoccaImgContainer.onmouseout = function () {mouseOut(projectRoccaImgContainer)};
+navBarItemHome.onclick = function(){clickToScroll(navBar, 0)};
 
-// function mouseOver(ele) {
-//     projectAddBackground.style.width = "100%";
-// }
-// function mouseOut(ele) {
-//     projectAddBackground.style.width = "100%";
-// }
+navBarItemAbout.onclick = function(){clickToScroll(aboutMe, 0)};
+
+navBarItemProject.onclick = function(){clickToScroll(project, 100)};
+
+navBarItemContact.onclick = function(){clickToScroll(contact, 0)};
+
+
+function getScrollTop(ele) {  
+    let actualTop = ele.offsetTop;
+    var current = ele.offsetParent;
+
+    while (current !== null){
+        actualTop += current.offsetTop;
+        current = current.offsetParent;
+    }
+    return actualTop;
+}
+
+function clickToScroll(ele, adjustment) {
+    window.scrollTo({
+        top: (getScrollTop(ele)-adjustment),
+        left: 0,
+        behavior: 'smooth'
+    });
+}
